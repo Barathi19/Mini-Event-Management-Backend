@@ -9,6 +9,7 @@ import {
   IsOptional,
 } from 'class-validator';
 import { IsEndTimeAfterStartTime } from 'src/common/validator/isEndTimeAfterStartTime';
+import { IsFutureDate } from 'src/common/validator/isFutureData';
 
 export class CreateEventDto {
   @IsNotEmpty()
@@ -21,6 +22,7 @@ export class CreateEventDto {
 
   @IsNotEmpty()
   @IsDateString()
+  @IsFutureDate()
   startTime: string;
 
   @IsNotEmpty()
